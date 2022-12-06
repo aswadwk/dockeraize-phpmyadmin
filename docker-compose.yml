@@ -6,7 +6,8 @@ services:
     volumes:
       - ./src:/var/www/html/
     ports:
-      - 8081:80
+      - 8080:80
+      # - 8080:80
 
   MariaDB:
     image: mysql:latest
@@ -23,9 +24,10 @@ services:
     image: phpmyadmin:latest
     restart: always
     ports:
-      - 8080:80
+      - 80:80
+      # - 8080:80
     environment:
       - PMA_ARBITRARY=1
-  
+
 volumes:
   MariaDB:
